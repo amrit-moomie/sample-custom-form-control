@@ -1,0 +1,10 @@
+<span class="field-error"
+*ngIf="formField?.hasError( 'required' )
+    && formField?.dirty">
+This is a required field.
+</span>
+<span class="field-error"
+*ngIf="formField?.hasError( 'normalEmailRule' )
+    && formField?.dirty">
+Email format is invalid.
+</span>

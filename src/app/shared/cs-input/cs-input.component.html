@@ -1,0 +1,47 @@
+
+<div class="form-row">
+    <label class="form-label" for="formControlName">
+        <span class="is-required">
+            {{label}}
+        </span>
+        <app-field-errors [formField]="formField" ></app-field-errors>
+    </label>
+    <input type="text" class="form-element"
+    [ngClass]="{
+        'has-error':
+        formField?.invalid
+            && formField?.dirty
+    }"
+    [id]="formControlName"
+    [name]="formControlName"
+    [value]="value"
+    [disabled]="isDisabled"
+    (change)="onChange($event)"
+    (blur)="touched()"
+    (input)="changed($event.target.value)"
+    >
+</div>
+		<!-- <div class="form-row">
+			<label class="form-label" for="email">
+				<span class="is-required">
+					Email
+				</span>
+				<span class="field-error"
+					*ngIf="fromControl?.hasError( 'required' )
+						&& fromControl?.dirty">
+					This is a required field.
+				</span>
+				<span class="field-error"
+					*ngIf="fromControl?.hasError( 'normalEmailRule' )
+						&& fromControl?.dirty">
+					Email format is invalid.
+				</span>
+			</label>
+			<input class="form-element" type="text" name="email" id="email"
+				[ngClass]="{
+		            'has-error':
+                    fromControl?.invalid
+		                && fromControl?.dirty
+		        }"
+				formControlName="email">
+		</div> -->
